@@ -3,6 +3,7 @@
   * Java
     * [http://java.sun.com/j2se/1.5.0/docs/api/ JavaTM 2 Platform Standard Edition 5.0 API Specification]
       * [http://java.sun.com/j2se/1.5.0/docs/api/java/net/URL.html Class URL]
+  * [http://en.wikipedia.org/wiki/Packet_sniffer Packet analyzer]
   * Network Monitor
     * [http://www.microsoft.com/downloads/details.aspx?FamilyID=983b941d-06cb-4658-b7f6-3088333d062f&displaylang=en Download Network Monitor]
     * [http://blogs.technet.com/netmon/archive/2007/12/21/understanding-http-flow-with-netmon-3-by-yuri-diogenes.aspx Understanding HTTP Flow with Netmon 3 - By Yuri Diogenes]
