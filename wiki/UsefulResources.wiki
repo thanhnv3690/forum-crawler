@@ -13,5 +13,6 @@
       * [http://blogs.technet.com/netmon/archive/2007/12/21/understanding-http-flow-with-netmon-3-by-yuri-diogenes.aspx Understanding HTTP Flow with Netmon 3 - By Yuri Diogenes]
       * [http://blogs.technet.com/netmon/default.aspx Network Monitor blog]
       * [http://social.technet.microsoft.com/Forums/en-US/netmon/threads Network Monitor forum]
-      *  http://aperture.sourceforge.net/ 
-      *  apache nutch, lucene
+ * Existing Java crawler libraries
+   * http://aperture.sourceforge.net/ 
+   *  apache nutch, lucene
