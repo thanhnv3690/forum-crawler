@@ -3,6 +3,7 @@
   * Java
     * [http://java.sun.com/j2se/1.5.0/docs/api/ JavaTM 2 Platform Standard Edition 5.0 API Specification]
       * [http://java.sun.com/j2se/1.5.0/docs/api/java/net/URL.html Class URL]
+    * [http://www.hibernate.org/ Hibernate]
   * Wikipedia
     * [http://en.wikipedia.org/wiki/Packet_sniffer Packet analyzer]
   * Tools
