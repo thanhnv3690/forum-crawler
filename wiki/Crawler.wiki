@@ -4,7 +4,7 @@
   This picture is the specification of the Store part.<br/>
   [http://www.ppseek.com/shareimg/1572670.jpg]
 
-= User Manual()  =
+= User Manual =
   * General Information
    * Introduction  
      ITunes Store is very fashion these days. People can buy the music, game, and book or other things in the store. This picture shows a part of games in the store:
