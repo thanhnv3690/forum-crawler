@@ -4,7 +4,7 @@
   This picture is the specification of the Store part.<br/>
   [http://www.ppseek.com/shareimg/1572670.jpg]
 
-= User Manual  =
+= User Manual()  =
   * General Information
    * Introduction  
      ITunes Store is very fashion these days. People can buy the music, game, and book or other things in the store. This picture shows a part of games in the store:
@@ -29,10 +29,17 @@
     Through this way, we can know the request’s specification including URL and User-Agent. Then we will go to the next step.
    * Use WGET to send the request
     Download WGET from [http://users.ugent.be/~bpuype/wget/]. Move the wget.exe file to the directory which you want to save the xml file download from ITunes Store, for example: E:\workspace\Store File\.<br/>
-    Open the cmd.exe, try this command ”wget www.google.com ” to check if the WGET works well. If you can find “index.html” in the directory Store File, WGET is ok now(Using “wget -h” to show the help).<br/>
+    Open the cmd.exe, try this command ”wget www.google.com ” to check if the WGET works well. If you can find “index.html” in the directory Store File, WGET is ok now. (Using “wget -h” to show the help).<br/>
     Now, we will send the request to ITunes Store based on the analysis in Fiddler. Input this command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” and you will get the xml file named “test”. The “iTunes/9.0.3” is User-Agent we got from Fiddler. “-O (not zero)” is a command used to name the file you download. The address “http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” comes from the part highlight in Fiddler.
    * Create Task Schedule
-    If we always download the file by ourselves, it seems not very convenient. Task Schedule is a good choice. The method I use is the “at” command.<br/>
-    First, write the command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=/36/6014/1” into a txt file, and then save the file as .bat file like “wgetStore.bat".<br/> 
-    Second, open cmd.exe, input like this “at computer time /every: week command you will run” for example “at 8:00 /every:M wgetStore.bat”, then the bat file will run at every Monday’s 8:00am. <br/>
-    Pay attention to the URL address, do you have found the difference between this one and the URL we used before? Yes, the URL we used in cmd is http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1, but the character "%" can't be run by bat file, so we replace it by "/". The information about some special characters can be found in this page: http://en.wikipedia.org/wiki/Percent-encoding.
+     If we always download the file by ourselves, it seems not very convenient. Task Schedule is a good choice. <br/>
+     First, we need to change the default path of the cmd. In our case, because we create the director E:\workspace\Store File\, so the default path should be E:\workspace\Store File\.<br/>
+     The method I use to change the default path is:</br>
+     Click Start, Run and type regedit. Follow these steps: HKEY_CURRENT_USER \ Software \ Microsoft \ Command Processor. In the right-pane, create a new value called "Autorun", and then set it's startup folder path, preceded by "CD /D ". In our case, we should input "CD /D E:\workspace\Store File\". Ok, let's open the cmd again, the default path has been changed.<br/>
+     Second, write the command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=/36/6014/1” into a txt file, and then save the file as .bat file like “wgetStore.bat”. <br/>
+     Pay attention to the URL address, do you have found the difference between this one and the URL we used before? Yes, the URL we used in cmd was http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1, but the character "%" can't be run by bat file, so we replace it by "/". The information about some special characters can be found in this page: http://en.wikipedia.org/wiki/Percent-encoding.<br/>
+     Third, now we have prepared all the things well. It's time to create a task schedule. Open the "Control Panel", "Scheduled Tasks", "Add a new Task", now you should choose the bat file we create before, and then set the time you want. Finally, input the password and if there is no password, just click next step, finish. <br/>
+     Maybe someone will see the warning about the password, don't worry, follow the methods list below:<br/>
+     The first situation,  the "Task Scheduler" service doesn't start. You can click Start, Run and type "services.msc" to check if it is enabled, if no, just start it.</br>
+     The second situation, your current account was set as logging automatically, but the password is blank, this will lead to the "Task Schedule" can't work well. You need to click Start, Run, type "gpedit.msc" and then expand"Windows settings"->"Security settings""Local Ploicies""Security Options". Double click "Accounts: Limit local account use of blank passwords to console logon only" and set it as disabled.<br/>
+     Ok, we have finished the task schedule. 
