@@ -31,7 +31,7 @@
     Download WGET from [http://users.ugent.be/~bpuype/wget/]. Move the wget.exe file to the directory which you want to save the xml file download from ITunes Store, for example: E:\workspace\Store File\.<br/>
     Open the cmd.exe, try this command ”wget www.google.com ” to check if the WGET works well. If you can find “index.html” in the directory Store File, WGET is ok now. (Using “wget -h” to show the help).<br/>
     Now, we will send the request to ITunes Store based on the analysis in Fiddler. Input this command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” and you will get the xml file named “test”. The “iTunes/9.0.3” is User-Agent we got from Fiddler. “-O (not zero)” is a command used to name the file you download. The address “http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” comes from the part highlight in Fiddler.
-   * Create Task Schedule(The examples below are created in Windows, but our project can work in Linux too)
+   * Create Task Schedule(The examples below are created in Windows, but our project can work in Linux too.)
      If we always download the file by ourselves, it seems not very convenient. Task Schedule is a good choice. <br/>
      First, we need to change the default path of the cmd. In our case, because we create the director E:\workspace\Store File\, so the default path should be E:\workspace\Store File\.<br/>
      The method I use to change the default path is:<br/>
