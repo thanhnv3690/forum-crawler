@@ -1,0 +1,35 @@
+Store Crawler Documentation
+
+= User Manual  =
+  * General Information
+   * Introduction  
+     ITunes Store is very fashion these days. People can buy the music, game, and book or other things in the store. This picture shows a part of games in the store:
+     [http://www.ppseek.com/shareimg/1572074.jpg]<br/>
+     As we can see, there are several attributes of these games just like Name, Artist, Price and Popularity. What the crawler needs to do is to get useful information so that we can analysis which game or music is the most popular one and how will this situation change next week.
+   * Tools
+    *WGET
+     A tool used to create the Task Schedule and download the xml file we need
+    * Fiddler
+     A tool used to analysis the request we send to ITunes Store and the response we get from the store
+  * Getting Started
+   * Use Fiddler to get the effective request
+    First, if you are not familiar with Fiddler, you can visit this page: [http://www.fiddler2.com/fiddler2/] and download it. You can download ITunes from [http://www.apple.com/downloads/].<br/>
+    Second, open Fiddler and ITunes. Choose the thing you are interested in, for example, I choose the “APP Store”-->”Games”-->”ALL”:<br/>
+    [http://www.ppseek.com/shareimg/1572075.jpg]<br/>
+    Fiddler will record the requests and responses like this:<br/>
+    [http://www.ppseek.com/shareimg/1572076.jpg]<br/>
+   * Run the project
+    Now we have got the file we need. We just need to run the project, and then we can check the data in our database.
+    Pay attention to the attribute “Body”, it shows the file’s length. Choose the biggest one and check its information in the Inspectors:<br/>
+    [http://www.ppseek.com/shareimg/1572077.jpg]<br/>
+    Through this way, we can know the request’s specification including URL and User-Agent. Then we will go to the next step.
+   * Use WGET to send the request
+    Download WGET from [http://users.ugent.be/~bpuype/wget/]. Move the wget.exe file to the directory which you want to save the xml file download from ITunes Store, for example: E:\workspace\Store File\.<br/>
+    Open the cmd.exe, try this command ”wget www.google.com ” to check if the WGET works well. If you can find “index.html” in the directory Store File, WGET is ok now(Using “wget -h” to show the help).<br/>
+    Now, we will send the request to ITunes Store based on the analysis in Fiddler. Input this command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” and you will get the xml file named “test”. The “iTunes/9.0.3” is User-Agent we got from Fiddler. “-O (not zero)” is a command used to name the file you download. The address “http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” comes from the part highlight in Fiddler.
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
