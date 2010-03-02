@@ -13,8 +13,8 @@ This is page is the user manual of the crawler
      A tool used to analysis the request we send to ITunes Store and the response we get from the store
   * Getting Started
    * Use Fiddler to get the effective request
-    First, if you are not familiar with Fiddler, you can visit this page: [http://www.fiddler2.com/fiddler2/] and download it. You can download ITunes from [http://www.apple.com/downloads/].<br/>
-    Second, open Fiddler and ITunes. Choose the thing you are interested in, for example, I choose the “APP Store”-->”Games”-->”ALL”:<br/>
+    1.  If you are not familiar with Fiddler, you can visit this page: [http://www.fiddler2.com/fiddler2/] and download it. You can download ITunes from [http://www.apple.com/downloads/].<br/>
+    2.  Open Fiddler and ITunes. Choose the thing you are interested in, for example, I choose the “APP Store”-->”Games”-->”ALL”:<br/>
     [http://www.ppseek.com/shareimg/1572075.jpg]<br/>
     Fiddler will record the requests and responses like this:<br/>
     [http://www.ppseek.com/shareimg/1572076.jpg]<br/>
@@ -29,7 +29,7 @@ This is page is the user manual of the crawler
     Now, we will send the request to ITunes Store based on the analysis in Fiddler. Input this command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” and you will get the xml file named “test”. The “iTunes/9.0.3” is User-Agent we got from Fiddler. “-O (not zero)” is a command used to name the file you download. The address “http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=%2F36%2F6014%2F1” comes from the part highlight in Fiddler.
    * Create Task Schedule(The examples below are created in Windows, but our project can work in Linux too.)
      If we always download the file by ourselves, it seems not very convenient. Task Schedule is a good choice. <br/>
-     1、We need to change the default path of the cmd. In our case, because we create the director E:\workspace\Store File\, so the default path should be E:\workspace\Store File\.<br/>
+     1、   We need to change the default path of the cmd. In our case, because we create the director E:\workspace\Store File\, so the default path should be E:\workspace\Store File\.<br/>
      The method I use to change the default path is:<br/>
      Click Start, Run and type regedit. Follow these steps: HKEY_CURRENT_USER \ Software \ Microsoft \ Command Processor. In the right-pane, create a new value called "Autorun", and then set it's startup folder path, preceded by "CD /D ". In our case, we should input "CD /D E:\workspace\Store File\". Ok, let's open the cmd again, the default path has been changed.<br/>
      2、   Write the command “wget –U=iTunes/9.0.3 –O test.xml http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/browse?path=/36/6014/1” into a txt file, and then save the file as .bat file like “wgetStore.bat”. <br/>
