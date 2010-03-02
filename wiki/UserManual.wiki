@@ -7,8 +7,8 @@ This is page is the user manual of the crawler
      [http://www.ppseek.com/shareimg/1572074.jpg]<br/>
      As we can see, there are several attributes of these games just like Name, Artist, Price and Popularity. What the crawler needs to do is to get useful information so that we can analysis which game or music is the most popular one and how will this situation change next week.
    * Tools
-    *WGET
-     A tool used to create the Task Schedule and download the xml file we need
+    * WGET
+     A tool used to send request and get response from the store
     * Fiddler
      A tool used to analysis the request we send to ITunes Store and the response we get from the store
   * Getting Started
