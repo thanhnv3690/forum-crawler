@@ -36,3 +36,5 @@ This is page is the user manual of the crawler
      The first situation,  the _"Task Scheduler" _service doesn't start. You can click _Start, Run and type "services.msc" _to check if it is enabled, if no, just start it.<br/>
      The second situation, your current account was set as logging automatically, but the password is blank, this will lead to the "Task Schedule" can't work well. You need to click _Start, Run, type "gpedit.msc" _and then expand_"Windows settings"->"Security settings""Local Ploicies""Security Options"_. Double click _"Accounts: Limit local account use of blank passwords to console logon only"_ and set it as disabled.<br/>
      Ok, we have finished the task schedule. 
+  *Javadoc
+     [http://forum-crawler.googlecode.com/svn/trunk/doc/index.html]
