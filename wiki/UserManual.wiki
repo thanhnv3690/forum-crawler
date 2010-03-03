@@ -5,7 +5,8 @@ This is page is the user manual of the crawler
    * Introduction  
      ITunes Store is very fashion these days. People can buy the music, game, and book or other things in the store. This picture shows a part of games in the store:
      [http://www.ppseek.com/shareimg/1572074.jpg]<br/>
-     As we can see, there are several attributes of these games just like _Name_, _Artist_, _Price_ and _Popularity_. What the crawler needs to do is to get useful information so that we can analysis which game or music is the most popular one and how will this situation change next week.
+     As we can see, there are several attributes of these games just like _Name_, _Artist_, _Price_ and _Popularity_. What the crawler needs to do is to get useful information so that we can analysis which game or music is the most popular one and how will this situation change next week. The examples below are created in Windows, but our project can work in Linux too.
+
    * Tools
     * WGET
      A tool used to send request and get response from the store
