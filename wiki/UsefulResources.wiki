@@ -18,3 +18,9 @@
  * Existing Java crawler libraries
    * http://aperture.sourceforge.net/ 
    *  apache nutch, lucene
+ * Smart phone platforms
+   * [http://www.android.com/ Google Android]
+     * [http://developer.android.com/index.html Developer site]
+     * [http://code.google.com/android/ Android at Google code]
+     * [http://www.android.com/market/ Android Market]
+     * [http://tech-droid.blogspot.com/2009/11/android-market-on-emulator.html Android market on emulator]
