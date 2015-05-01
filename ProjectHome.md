@@ -1,0 +1,1 @@
+A web forum crawler which can collect the forum data automatically according to scheduled running time such as once a week. The collected data will be stored in the database. The data can be used for data mining or social network analysis.
